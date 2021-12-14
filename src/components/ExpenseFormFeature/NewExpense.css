@@ -10,7 +10,15 @@
     transition: 300ms;
   }
   
-  .new-expense button {
+  button.add-expense {
+    font: inherit;
+    /* cursor: pointer; */
+    padding: 0.25rem 0.5rem;
+    background-color: #40005d;
+    color: white;
+    border-radius: 10px;
+  }
+  .new-expense__actions button {
     font: inherit;
     cursor: pointer;
     padding: 1rem 2rem;
@@ -19,6 +27,11 @@
     color: white;
     border-radius: 12px;
     margin-right: 1rem;
+  }
+
+  .new-expense button i {
+    font-size: 2rem;
+    color: inherit;
   }
   
   .new-expense button:hover,

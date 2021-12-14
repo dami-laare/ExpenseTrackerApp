@@ -7,16 +7,16 @@ import ExpenseChart from './ExpenseChart';
 
 
 function Expenses({ expenses }) {
-  const [filteredYear, setFilteredYear] = useState('All');
+  const [filteredMonth, setFilteredMonth] = useState('All');
 
   const filterChangeHandler = selectedYear => {
-    setFilteredYear(selectedYear);
+    setFilteredMonth(selectedYear);
   };
   const filteredExpenses = expenses.filter((expense) => {
-    if (filteredYear === "All") {
+    if (filteredMonth === "All") {
       return expense;
     } else {
-      return expense.date.getFullYear() === Number(filteredYear);
+      return expense.date.getMonth() === Number(filteredMonth);
     }
   })
 
@@ -24,7 +24,7 @@ function Expenses({ expenses }) {
   
   return (
     <Card className="expenses">
-      <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+      <ExpensesFilter expenses={expenses} selected={filteredMonth} onChangeFilter={filterChangeHandler} />
       <ExpenseChart expenses={filteredExpenses}/>
       <ExpensesList items={filteredExpenses} />
     </Card>
