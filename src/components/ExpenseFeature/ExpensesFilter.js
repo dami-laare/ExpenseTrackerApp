@@ -16,7 +16,9 @@ const ExpensesFilter = (props) => {
 
   const monthList = ['January', 'February', 'March', 'April','May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-  const optionGenerator = () => {
+  
+
+  useEffect(()=> {
     for (let expense of props.expenses){
       if (yearArr.indexOf(expense.date.getFullYear())<0){
         setYearArr((prevState)=> {
@@ -24,11 +26,7 @@ const ExpensesFilter = (props) => {
         })
       }
     }
-  } 
-
-  useEffect(()=> {
-    optionGenerator()
-  }, [props.expenses])
+  }, [props.expenses, yearArr])
 
   const yearOptions = yearArr.map(year => {
     return <option key={Math.random()} value ={year}>{year}</option>
