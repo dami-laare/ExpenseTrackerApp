@@ -48,8 +48,8 @@ const ExpenseForm = ({onSave, onCancel}) => {
             </div>
             </div>
             <div className="new-expense__actions">
-                <button type="button" onClick={onCancel}>Cancel</button>
-                <button type="submit">Add Expense</button>
+                <button className='bg-dark' type="button" onClick={onCancel}>Cancel</button>
+                <button className='bg-dark' type="submit">Add Expense</button>
             </div>
         </form>
     );
