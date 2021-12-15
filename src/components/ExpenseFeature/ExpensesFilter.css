@@ -5,8 +5,9 @@
   
   .expenses-filter__control {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     margin: 1rem 0;
   }
@@ -14,6 +15,7 @@
   .expenses-filter label {
     font-weight: bold;
     margin-bottom: 0.5rem;
+    /* margin-right: 10vw; */
   }
   
   .expenses-filter select {
@@ -21,4 +23,5 @@
     padding: 0.5rem 3rem;
     font-weight: bold;
     border-radius: 6px;
+    text-align: center;
   }
