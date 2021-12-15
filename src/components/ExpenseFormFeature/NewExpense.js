@@ -22,7 +22,7 @@ const NewExpense = ({onSave}) => {
     return(
         <div className='new-expense'>
         {!isEditing && (
-          <button className='add-expense bg-dark' onClick={startEditingHandler}><i className="fas fa-plus"></i></button>
+          <button className='add-expense' onClick={startEditingHandler}><i className="fas fa-plus"></i></button>
         )}
         {isEditing && (
           <ExpenseForm
