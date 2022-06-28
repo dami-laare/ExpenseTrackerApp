@@ -4,11 +4,15 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 
 const ExpensesList = ({ items }) => {
-  const [total, setTotal] = React.useState(0);
+  const [total, setTotal] = React.useState();
   React.useEffect(() => {
+    let t = 0;
+
     items.forEach((i) => {
-      setTotal((prev) => (prev += i.amount));
+      t += i.amount;
     });
+
+    setTotal(t);
   }, [items]);
   if (items.length === 0) {
     return <h2 className="expenses-list__fallback">No expense found</h2>;
