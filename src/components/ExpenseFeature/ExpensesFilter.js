@@ -1,52 +1,72 @@
-import React from 'react';
-import  { useState, useEffect } from 'react'
+import React from "react";
+import { useState, useEffect } from "react";
 
-import './ExpensesFilter.css';
+import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
-  const [yearArr, setYearArr] = useState([])
+  const [yearArr, setYearArr] = useState([]);
 
   const dropdownChangeHandler = (event) => {
     props.onChangeYearFilter(event.target.value);
   };
 
   const monthChangeHandler = (event) => {
-    props.onChangeMonthFilter(event.target.value)
-  }
+    props.onChangeMonthFilter(event.target.value);
+  };
 
-  const monthList = ['January', 'February', 'March', 'April','May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  const monthList = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  
-
-  useEffect(()=> {
-    for (let expense of props.expenses){
-      if (yearArr.indexOf(expense.date.getFullYear())<0){
-        setYearArr((prevState)=> {
-          return [...prevState, expense.date.getFullYear()]
-        })
+  useEffect(() => {
+    for (let expense of props.expenses) {
+      const date = new Date(expense.date);
+      if (yearArr.indexOf(date.getFullYear()) < 0) {
+        setYearArr((prevState) => {
+          return [...prevState, date.getFullYear()];
+        });
       }
     }
-  }, [props.expenses, yearArr])
+  }, [props.expenses, yearArr]);
 
-  const yearOptions = yearArr.map(year => {
-    return <option key={Math.random()} value ={year}>{year}</option>
-  })
+  const yearOptions = yearArr.map((year) => {
+    return (
+      <option key={Math.random()} value={year}>
+        {year}
+      </option>
+    );
+  });
 
-  const monthOptions = monthList.map(month => {
-    return <option key={Math.random()} value ={month}>{month}</option>
-  })
+  const monthOptions = monthList.map((month) => {
+    return (
+      <option key={Math.random()} value={month}>
+        {month}
+      </option>
+    );
+  });
 
   return (
-    <div className='expenses-filter'>
-      <div className='expenses-filter__control'>
+    <div className="expenses-filter">
+      <div className="expenses-filter__control">
         <label>Filter by year</label>
-          <select value={props.selectedYear} onChange={dropdownChangeHandler}>
-            <option value='All'>All</option>
-            {yearOptions}
+        <select value={props.selectedYear} onChange={dropdownChangeHandler}>
+          <option value="All">All</option>
+          {yearOptions}
         </select>
         <label>Filter by month</label>
         <select value={props.selectedMonth} onChange={monthChangeHandler}>
-          <option value='All'>All</option>
+          <option value="All">All</option>
           {monthOptions}
         </select>
       </div>
@@ -54,5 +74,4 @@ const ExpensesFilter = (props) => {
   );
 };
 
-
-export default ExpensesFilter 
+export default ExpensesFilter;

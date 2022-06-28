@@ -1,0 +1,60 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  padding: 5% 1vw;
+  transition: 200ms;
+}
+
+.container {
+  width: 90%;
+  color: white;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 5%; */
+  background-color: rgb(31, 31, 31);
+  padding: 5%;
+  text-align: center;
+}
+
+.sign_up {
+  background-color: rgb(162, 218, 235);
+  text-align: left;
+  border-radius: 0.8rem;
+  padding: 2rem;
+  width: 95%;
+  color: #000;
+}
+
+.sign_up label {
+  font-weight: 600;
+  align-self: start;
+}
+
+.sign_up input {
+  font-size: 0.8rem;
+}
+
+.sign_up form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 0 0 1.5rem 0; */
+}
+
+.sign_up button {
+  margin-top: 1rem;
+}
+
+.container > h1 {
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  .body {
+    padding: 5% 10vw;
+  }
+}

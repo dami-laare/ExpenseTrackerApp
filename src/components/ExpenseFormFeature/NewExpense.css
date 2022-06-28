@@ -1,52 +1,53 @@
 .new-expense {
-    background-color: #a2daeb;
-    padding: 1rem;
-    margin: 2rem auto;
-    width: 50rem;
-    max-width: 95%;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-    transition: 300ms;
-  }
-  
-  button.add-expense {
-    font: inherit;
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    background-color: #000000;
-    color: white;
-    border-radius: 10px;
-  }
-  .new-expense__actions button {
-    font: inherit;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border: 1px solid #000000;
-    background-color: #000000;
-    color: white;
-    border-radius: 12px;
-    margin-right: 1rem;
-  }
+  background-color: #a2daeb;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  transition: 300ms;
+}
 
-  button.add-expense i {
-    font-size: 2rem;
-    color: inherit;
-  }
-  
-  .new-expense button:hover,
-  .new-expense button:active {
-    background-color: #363636;
-    border-color: #3b3b3b;
-  }
-  
-  .new-expense button.alternative {
-    color: #220131;
-    border-color: transparent;
-    background-color: transparent;
-  }
-  
-  .new-expense button.alternative:hover,
-  .new-expense button.alternative:active {
-    background-color: #ddb3f8;
-  }
+button.add-expense {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  background-color: #000000;
+  color: white;
+  border-radius: 10px;
+}
+.new-expense__actions button {
+  width: 9rem;
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1px solid #000000;
+  background-color: #000000;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+button.add-expense i {
+  font-size: 2rem;
+  color: inherit;
+}
+
+.new-expense button:hover,
+.new-expense button:active {
+  background-color: #363636;
+  border-color: #3b3b3b;
+}
+
+.new-expense button.alternative {
+  color: #220131;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.new-expense button.alternative:hover,
+.new-expense button.alternative:active {
+  background-color: #ddb3f8;
+}

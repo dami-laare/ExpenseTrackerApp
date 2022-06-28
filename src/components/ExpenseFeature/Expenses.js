@@ -1,45 +1,63 @@
-import React, { useState } from 'react'
-import ExpensesList from './ExpensesList'
+import React, { useState } from "react";
+import ExpensesList from "./ExpensesList";
 import "./Expenses.css";
-import Card from '../UI/Card'
+import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
-import ExpenseChart from './ExpenseChart';
-
+import ExpenseChart from "./ExpenseChart";
 
 function Expenses({ expenses }) {
-  const [filteredMonth, setFilteredMonth] = useState('All');
-  const [filteredYear, setFilteredYear] = useState('All');
-  const monthList = ['January', 'February', 'March', 'April','May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  const [filteredMonth, setFilteredMonth] = useState("All");
+  const [filteredYear, setFilteredYear] = useState("All");
+  const monthList = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
   const monthFilterHandler = (filterMonth) => {
-    setFilteredMonth(filterMonth)
-  }
+    setFilteredMonth(filterMonth);
+  };
 
-  const filterChangeHandler = selectedYear => {
+  const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
-  
+
   const yearFilteredExpenses = expenses.filter((expense) => {
+    const date = new Date(expense.date);
     if (filteredYear === "All") {
       return expense;
     } else {
-      return expense.date.getFullYear() === Number(filteredYear);
+      return date.getFullYear() === Number(filteredYear);
     }
-  })
+  });
   const filteredExpenses = yearFilteredExpenses.filter((expense) => {
-    if (filteredMonth === 'All'){
+    const date = new Date(expense.date);
+    if (filteredMonth === "All") {
       return expense;
     } else {
-      return monthList[expense.date.getMonth()] === filteredMonth
+      return monthList[date.getMonth()] === filteredMonth;
     }
-  })
+  });
 
-  
-  
   return (
     <Card className="expenses">
-      <ExpensesFilter expenses={expenses} selectedYear={filteredYear} selectedMonth={filteredMonth} onChangeYearFilter= {filterChangeHandler} onChangeMonthFilter={monthFilterHandler} />
-      <ExpenseChart expenses={filteredExpenses}/>
+      <ExpensesFilter
+        expenses={expenses}
+        selectedYear={filteredYear}
+        selectedMonth={filteredMonth}
+        onChangeYearFilter={filterChangeHandler}
+        onChangeMonthFilter={monthFilterHandler}
+      />
+      <ExpenseChart expenses={filteredExpenses} />
       <ExpensesList items={filteredExpenses} />
     </Card>
   );

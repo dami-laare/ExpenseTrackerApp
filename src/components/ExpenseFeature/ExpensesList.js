@@ -11,8 +11,8 @@ const ExpensesList = ({items}) => {
         <ul className="expenses-list">
             {items.map(expense => (
                 <ExpenseItem
-                    key={expense.id}
-                    myKey={expense.id}
+                    key={expense._id}
+                    myKey={expense._id}
                     title={expense.title}
                     amount={expense.amount}
                     date={expense.date}
