@@ -46,7 +46,7 @@ const Welcome = () => {
 
     if (formIsValid) {
       await axios
-        .post("http://localhost:4000/api/v1/user", {
+        .post("https://trakk-backend.herokuapp.com/api/v1/user", {
           ...details,
         })
         .then((response) => {

@@ -13,7 +13,7 @@ function App() {
 
   const fetchUserData = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user", {
+      .get("https://trakk-backend.herokuapp.com/api/v1/user", {
         headers: {
           token: window.localStorage.getItem("token"),
         },
@@ -35,7 +35,7 @@ function App() {
     setAddingExpense(true);
     await axios
       .put(
-        "http://localhost:4000/api/v1/user/expense",
+        "https://trakk-backend.herokuapp.com/api/v1/user/expense",
         {
           expense: submittedData,
         },
