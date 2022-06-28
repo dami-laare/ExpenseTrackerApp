@@ -79,6 +79,12 @@ const Login = () => {
             >
               {loading ? <ImSpinner2 className="loading-spinner" /> : "Login"}
             </Button>
+            <Form.Text style={{ fontSize: "0.76rem", marginTop: "1rem" }}>
+              Don't have an account?{" "}
+              <Link style={{ color: "inherit" }} to="/">
+                Sign up.
+              </Link>
+            </Form.Text>
           </Form>
         </div>
       </div>
