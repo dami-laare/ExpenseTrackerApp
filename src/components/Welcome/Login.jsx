@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { ImSpinner2 } from "react-icons/im";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import classes from "./Styles.module.css";
 
@@ -59,7 +59,7 @@ const Login = () => {
                 fontSize: "0.8rem",
                 alignSelf: "start",
                 marginTop: "0.5rem",
-                marginBottom: "2rem",
+                marginBottom: "1rem",
               }}
             >
               <input
