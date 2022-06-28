@@ -30,15 +30,24 @@ const ExpensesFilter = (props) => {
   ];
 
   useEffect(() => {
-    for (let expense of props.expenses) {
-      const date = new Date(expense.date);
-      if (yearArr.indexOf(date.getFullYear()) < 0) {
-        setYearArr((prevState) => {
-          return [...prevState, date.getFullYear()];
-        });
+    const a = [];
+    props.expenses.forEach((e) => {
+      const date = new Date(e.date);
+      if (a.indexOf(date.getFullYear()) < 0) {
+        a.push(date.getFullYear());
       }
-    }
-  }, [props.expenses, yearArr]);
+    });
+
+    setYearArr(a);
+    // for (let expense of props.expenses) {
+    //   const date = new Date(expense.date);
+    //   if (yearArr.indexOf(date.getFullYear()) < 0) {
+    //     setYearArr((prevState) => {
+    //       return [...prevState, date.getFullYear()];
+    //     });
+    //   }
+    // }
+  }, [props.expenses]);
 
   const yearOptions = yearArr.map((year) => {
     return (

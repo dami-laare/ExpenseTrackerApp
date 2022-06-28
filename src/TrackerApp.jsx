@@ -21,7 +21,6 @@ function App() {
       .then((response) => {
         setExpenses(response.data.user.expenses);
         setUser(response.data.user);
-        console.log(response.data.user);
       })
       .catch((error) => {
         console.log(error.response.data);
