@@ -25,6 +25,7 @@ const InstallButton = ({ onClick }) => {
       variant="dark"
       style={{ position: "absolute", top: "1rem", right: "1rem" }}
       onClick={onClick}
+      className="install-button"
     >
       <ImDownload style={{ marginRight: "0.5rem" }} />
       <span>Install</span>

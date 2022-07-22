@@ -17,3 +17,9 @@
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
+
+@media all and (display-mode: standalone) {
+  .install-button {
+    display: none;
+  }
+}
